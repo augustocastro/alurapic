@@ -1,7 +1,9 @@
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-describe('AppComponent', () => {
-  beforeEach(async(() => {
+import {async, TestBed} from '@angular/core/testing';
+import {AppComponent} from './app.component';
+import {beforeEachProviders, ddescribe, expect, it} from '@angular/core/testing/src/testing_internal';
+
+ddescribe('AppComponent', () => {
+  beforeEachProviders(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
