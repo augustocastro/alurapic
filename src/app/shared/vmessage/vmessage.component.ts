@@ -14,7 +14,4 @@ export class VMessageComponent implements OnInit {
 
   ngOnInit() {
   }
-
-
-
 }

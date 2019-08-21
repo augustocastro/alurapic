@@ -7,6 +7,7 @@ import {CadModule} from '../../shared/components/cad/cad.module';
 import {PhotosModule} from '../photos.module';
 import {SearchComponent} from './search/search.component';
 import {DarkenOnHoverModule} from './search/directives/darken-on-hover/darken-on-hover.module';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {DarkenOnHoverModule} from './search/directives/darken-on-hover/darken-on
     CommonModule,
     PhotosModule,
     CadModule,
-    DarkenOnHoverModule
+    DarkenOnHoverModule,
+    RouterModule
   ]
 })
 export class PhotoListModule {

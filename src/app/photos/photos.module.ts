@@ -6,6 +6,8 @@ import {PhotoModule} from './photo/photo.module';
 import {PhotosComponent} from './photo-list/photos/photos.component';
 import {CadModule} from '../shared/components/cad/cad.module';
 import {DarkenOnHoverModule} from './photo-list/search/directives/darken-on-hover/darken-on-hover.module';
+import {PhotoDetailsModule} from './photo-details/photo-details.module';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [PhotosComponent],
@@ -15,7 +17,9 @@ import {DarkenOnHoverModule} from './photo-list/search/directives/darken-on-hove
     HttpClientModule,
     CommonModule,
     CadModule,
-    DarkenOnHoverModule
+    DarkenOnHoverModule,
+    PhotoDetailsModule,
+    RouterModule,
   ],
   exports: [PhotosComponent]
 })
