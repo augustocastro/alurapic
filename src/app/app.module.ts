@@ -9,6 +9,7 @@ import {PhotoListModule} from './photos/photo-list/photo-list.module';
 import {VmessageModule} from './shared/vmessage/vmessage.module';
 import {CoreModule} from './core/core.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,5 +27,6 @@ import {CoreModule} from './core/core.module';
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  
 
 }
