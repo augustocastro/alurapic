@@ -9,7 +9,7 @@ import { UserService } from "src/app/core/user/user.service";
 import { ServerLogService } from "./server-log-service";
 
 @Injectable()
-export class GlobalErrorHandler implements ErrorHandler{
+export class GlobalErrorHandler implements ErrorHandler {
     
     constructor(private injector: Injector) {
     }
