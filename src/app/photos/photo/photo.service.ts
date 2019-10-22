@@ -20,7 +20,7 @@ export class PhotoService {
 
   listFormUserPagineted(userName: string, page: number): Observable<Photo[]> {
     const params = new HttpParams().append('page', page.toString());
-    return this.http.get<Photo[]>(API + `/${userName}/photos`, {params});
+    return this.http.get<Photo[]>(API + `/${userName}/photosx`, {params});
   }
 
   uplpad(description: string, allowComments, file: File): Observable<any> {

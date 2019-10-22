@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://alurapic'
+  apiUrl: 'http://alurapic',
+  serverLog: 'http://suaapiaqui'
 };
