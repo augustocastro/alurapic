@@ -1,12 +1,13 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {lowerCaseValidador} from '../../shared/validators/lower-case-validador';
-import {UserNotTakenValidatorService} from './user-not-taken.validator.service';
-import {User} from '../../core/user/user';
-import {NewUser} from './new-user';
-import {SignupService} from './signup.service';
-import {Router} from '@angular/router';
-import {PlatafornDetectorService} from '../../core/plataform/plataforn-detector.service';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { NewUser } from './new-user';
+import { SignupService } from './signup.service';
+import { PlatafornDetectorService } from '../../core/plataform/plataforn-detector.service';
+import { UserNotTakenValidatorService } from './user-not-taken.validator.service';
+import { lowerCaseValidador} from '../../shared/validators/lower-case-validador';
+import { userNamePassword } from './username-password.validator';
 
 @Component({
   selector: 'app-signup',
@@ -57,6 +58,8 @@ export class SignupComponent implements OnInit {
           Validators.maxLength(40)
         ]
       ]
+    }, {
+      validator: userNamePassword
     });
 
     if (this.plataformDetector.isPlatformBrowser()) {
@@ -65,10 +68,12 @@ export class SignupComponent implements OnInit {
   }
 
   signup() {
-    const newUser: NewUser = this.signupForm.getRawValue();
-    this.signupService.signup(newUser)
-      .subscribe(
-        response => this.router.navigate(['']),
-        (error: Error) => console.log(error));
+    if (this.signupForm.valid && !this.signupForm.pending) {
+      const newUser: NewUser = this.signupForm.getRawValue();
+      this.signupService.signup(newUser)
+        .subscribe(
+          response => this.router.navigate(['']),
+          (error: Error) => console.log(error));
+    } 
   }
 }

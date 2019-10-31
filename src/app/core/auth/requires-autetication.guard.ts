@@ -13,7 +13,9 @@ export class RequiresAuteticationGuard implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     if (!this.userService.isLogged()) {
-      this.router.navigate(['']);
+      this.router.navigate([''], {  
+        queryParams: { fromUrl: state.url } 
+      });
       return false;
     }
     return true;
